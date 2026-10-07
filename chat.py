@@ -1,10 +1,13 @@
 """Chat with the baseline agent in the terminal. Type 'quit' to exit."""
 import asyncio
+import sys
 
 from pvl.agent import build_agent
 
 
 async def main() -> None:
+    # The Windows console defaults to a legacy code page and crashes on emoji in replies.
+    sys.stdout.reconfigure(encoding="utf-8")
     agent = build_agent()
     print("Baseline assistant ready. Type 'quit' to exit.\n")
     while True:
