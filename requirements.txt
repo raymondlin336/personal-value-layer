@@ -1,0 +1,2 @@
+openjiuwen==0.1.19
+python-dotenv
